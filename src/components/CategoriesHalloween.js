@@ -1,9 +1,17 @@
-import { View, Text, Dimensions, Pressable, Image } from 'react-native'
+import { View, Text, Dimensions, Pressable, Image, useColorScheme } from 'react-native'
+import COLORS from '../constants/COLORS'
+import Lottie from 'lottie-react-native';
 
-const Categories = () => {
+const CategoriesHalloween = () => {
+  const colorScheme = useColorScheme();
   const { width, height } = Dimensions.get('window');
   return (
     <View className='flex-row justify-center space-x-2 py-4 bg-[#edf1f4]' style={{ height: height / 2 - 30}} >
+      <Lottie 
+        source={require('../assets/animations/halloween1.json')} autoPlay loop 
+        style={{width: 200, height: 200, position: 'absolute', zIndex: 100, left: -10}}
+      />
+
       {/* column 1 */}
       <View className='space-y-2' style={{ width: width / 2 - 20}}>
         {/* row 1 */}
@@ -18,11 +26,16 @@ const Categories = () => {
               resizeMode='contain'
               className='w-full h-full'
             />
+            <Lottie 
+              source={require('../assets/animations/halloween-vampire.json')} autoPlay loop 
+              style={{width: 100, height: 100, position: 'absolute', zIndex: 100, right: -8, top: 10}}
+            />
           </View>
         </Pressable>
 
         {/* row 2 */}
         <Pressable android_ripple={{ color: '#dfdfdf'}}  className='flex-row bg-white border-[#eeeeee] border-[1px] rounded-lg justify-center items-center pl-4 py-2 space-x-2' style={{ height: '25%'}}> 
+
           <View className='flex-1'>
             <Text className='text-sm font-PoppinsSemiBold text-black'>pandago</Text>
             <Text className='text-xs font-PoppinsRegular text-black'>{'<'}1hr padala</Text>
@@ -39,7 +52,12 @@ const Categories = () => {
 
       {/* column 2 */}
       <View className='justify-center space-y-2' style={{ width: width / 2 - 20}}>
+
         <Pressable android_ripple={{ color: '#dfdfdf'}} className='flex-1 bg-white rounded-lg border-[#eeeeee] border-[1px] '>
+          <Lottie 
+            source={require('../assets/animations/halloween-ghost.json')} autoPlay loop 
+            style={{width: 190, height: 150, position: 'absolute', zIndex: 100}}
+          />
           <View className='py-2 pl-4 pr-2'>
             <Text className='text-lg font-PoppinsSemiBold text-black '>Shops</Text>
             <Text className='text-xs font-PoppinsRegular text-black '>Groceries and more</Text>
@@ -80,8 +98,12 @@ const Categories = () => {
           </View>
         </Pressable>
       </View>
+      <Lottie 
+        source={require('../assets/animations/halloween-ball.json')} autoPlay loop 
+        style={{width: 150, height: 150, position: 'absolute', zIndex: 100, bottom: -10, right: 0}}
+      />
     </View>
   )
 }
 
-export default Categories
+export default CategoriesHalloween

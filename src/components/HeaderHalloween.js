@@ -1,11 +1,13 @@
-import { View, Text, TextInput, TouchableOpacity } from 'react-native'
+import { View, Text, TextInput, TouchableOpacity, useColorScheme } from 'react-native'
 import Feather from 'react-native-vector-icons/Feather'
 import COLORS from '../constants/COLORS'
+import Lottie from 'lottie-react-native';
 
-const Header = () => {
+const HeaderHalloween = () => {
+  const colorScheme = useColorScheme();
   const iconSize = 20;
   return (
-    <View className='bg-primary-light px-6 py-4 space-y-2' style={{ elevation: 8}}>
+    <View className='bg-black px-6 py-4 space-y-2' style={{ elevation: 8}}>
     {/* current location */}
     <View className='flex-row space-x-5 items-center'>
     <TouchableOpacity>
@@ -34,8 +36,12 @@ const Header = () => {
         className='bg-white rounded-full pl-12 text-sm py-2'
       />
     </View>
+    <Lottie 
+        source={require('../assets/animations/halloween-search.json')} autoPlay loop 
+        style={{width: 75, height: 75, position: 'absolute', zIndex: 100, right: 12, top: 15}}
+      />
   </View>
   )
 }
 
-export default Header
+export default HeaderHalloween
