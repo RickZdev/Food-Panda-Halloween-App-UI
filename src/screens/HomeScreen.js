@@ -68,7 +68,6 @@ const HomeScreen = () => {
         </View>
       }
 
-
       {/* dark mode */}
       {
         toggleDarkMode === 'dark' && 
@@ -96,8 +95,8 @@ const HomeScreen = () => {
         </View>
       }
 
-        {/* halloween mode */}
-        {
+      {/* halloween mode */}
+      {
         toggleDarkMode === 'halloween' && 
         <View className='flex-1 bg-white'>
           <TouchableOpacity 
